@@ -72,6 +72,7 @@
 
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
     color: #00e0d0;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {

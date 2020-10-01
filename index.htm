@@ -36,7 +36,7 @@
         <header class="bg-header text-white text-center" style="position: relative;">
             <div class="bg-secondary" style="padding-bottom: 70px;">
                 <nav class="navbar navbar-expand-lg text-uppercase" id="mainNav">
-                    <div class="container-fluid" style="padding-left: 0%; padding-right: 0%;">
+                    <div class="container" style="padding-left: 0%; padding-right: 0%;">
                         <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo.png" alt="">
                             <span class="logo-span">tajam</span>
                         </a>
@@ -485,33 +485,15 @@
 
                     <div class="col-md-4">
                         <h5 class="h5-footer">OUR STUDIO</h5>
-                        <div class="row">
 
-                            <div class="col-md-12 col-sm-12">
-                                <i class="fas fa-map-marker-alt"
-                                    style="display: inline-block; color: white; vertical-align: top;"></i>
-
-                                <div style="display: inline-block; margin-left: 10px;">
-
-                                    <p class="p-footer">Ruko cucruk, Jl. Radio luar dalem jos<br>
-                                        No.12 - 13, Kalideres - Jakarta Barat<br>
-                                        11480 - Indonesia
-                                    </p>
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-12 col-sm-12">
-                                <i class="fas fa-phone"
-                                    style="display: inline-block; color: white; vertical-align: middle;"></i>
-
-                                <div style="display: inline-block; margin-left: 6px;">
-                                    <p class="p-footer">(+62) 21-2224 3333</p>
-                                </div>
-
-                            </div>
-
-                        </div>
+                        <p class="p-footer" style="margin-top: 20px;"><i class="fas fa-map-marker-alt"
+                                style="margin-right: 1rem"></i>
+                            Ruko cucruk, Jl. Radio luar dalem jos<br>
+                            No.12 - 13, Kalideres - Jakarta Barat<br>
+                            11480 - Indonesia
+                        </p>
+                        <p class="p-footer"><i class="fas fa-phone" style="margin-right: 1rem"></i>(+62) 21-2224-3333
+                        </p>
                     </div>
 
                     <div class="col-md-4">
@@ -553,7 +535,10 @@
                             </li>
                         </ul>
                     </div>
-
+                    <div style="display: flex; margin: 10px; color: #fff;">HELP</div>
+                    <div style="display: flex; margin: 10px; color: #fff;">TERMS & CONDITION </div>
+                    <div style="display: flex; margin: 10px; color: #fff;">PRIVACY</div>
+                    <div style="display: flex; margin-left: auto; color: #fff;">Copyright © 2015 - Tajem Creative</div>
                 </div>
             </div>
         </div>
@@ -571,6 +556,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <h5 class="text-center">Messages</h5>
                     <div id="allMessages"></div>
                 </div>
                 <div class="modal-footer">
@@ -580,7 +566,7 @@
                                 <input type="text" class="form-control" id="nickname" placeholder="Nickname"
                                     aria-label="Nickname">
                             </div>
-                            <textarea class="form-control" id="textareaMessage" placeholder="Your message"
+                            <textarea required class="form-control" id="textareaMessage" placeholder="Your message"
                                 aria-label="Your Message"></textarea>
                             <div class="input-group-append">
                                 <button class="btn btn-outline" type="submit" id="button-addon2" style="margin: 0;"><i
@@ -597,8 +583,7 @@
 </body>
 
 <!-- Bootstrap core JavaScript -->
-<script src=" vendor/jquery/jquery.min.js">
-</script>
+<script src=" vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom scripts for this template -->
@@ -616,7 +601,12 @@
 
         $form.submit(function (event) {
             event.preventDefault();
-            socket.emit('send message', ($nickname.val().length > 0) ? { msg: $textarea.val(), nickname: $nickname.val(), color: $bgColor } : { msg: $textarea.val(), nickname: "Anonymous", color: $bgColor });
+            let data = {
+                nickname: $nickname.val().length > 0 ? $nickname.val() : "Anonymous",
+                msg: $textarea.val(),
+                color: $bgColor
+            };
+            socket.emit('send message', data);
             $textarea.val('');
         });
 
