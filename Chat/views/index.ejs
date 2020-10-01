@@ -589,27 +589,38 @@
 <!-- Custom scripts for this template -->
 <script src="/socket.io/socket.io.js"></script>
 <script>
+    // Функция для работы с данными на сайте
     $(function () {
+        // Включаем socket.io и отслеживаем все подключения
         let socket = io.connect();
+
         let $form = $("#messForm");
         let $textarea = $("#textareaMessage");
         let $allMessages = $("#allMessages");
         let $nickname = $("#nickname");
+
         let $bgColor = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
 
-
+        // Отслеживаем нажатие на кнопку в форме сообщений
         $form.submit(function (event) {
+            // Предотвращаем классическое поведение формы
             event.preventDefault();
             let data = {
                 nickname: $nickname.val().length > 0 ? $nickname.val() : "Anonymous",
                 msg: $textarea.val(),
                 color: $bgColor
             };
+
+            // В сокет отсылаем новое событие 'send message',
+            // в событие передаем различные параметры и данные
             socket.emit('send message', data);
             $textarea.val('');
         });
 
+        // Здесь отслеживаем событие 'add message', 
+        // которое должно приходить из сокета в случае добавления нового сообщения
         socket.on('add message', function (data) {
+            // Встраиваем полученное сообщение в блок с сообщениями
             $allMessages.append(`<div class="chat-message" style="background-color: #${data.color}">${data.nickname}: ${data.msg}</div>`);
         });
 
