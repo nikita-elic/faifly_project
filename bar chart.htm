@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bar chart</title>
+
+    <style type="text/css">
+        #items {
+            width: max-content;
+            background-color: #eee;
+            border: 2px solid #ccc;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .item {
+            width: 15px;
+            margin: 5px 5px 0 5px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .item-green {
+            background-color: greenyellow;
+        }
+
+        .item-yellow {
+            background-color: yellow;
+        }
+
+        .item-red {
+            background-color: red;
+        }
+    </style>
+
+    <script>
+        let drawBarChart = () => {
+            let array = [5, 8, 2, 1, 15, 2, 3, 5, 9, 11, 10, 4, 3, 14, 1, 7, 10, 3, 2, 13];
+            let items = "";
+
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] < 6) {
+                    items += `<div class="item item-green" style="height: ${array[i]}vh">${array[i]}</div>`;
+                } else if (array[i] > 5 && array[i] < 11) {
+                    items += `<div class="item item-yellow" style="height: ${array[i]}vh">${array[i]}</div>`;
+                } else {
+                    items += `<div class="item item-red" style="height: ${array[i]}vh">${array[i]}</div>`;
+                }
+            }
+
+            document.getElementById("items").innerHTML = items;
+        };
+    </script>
+
+</head>
+
+<body onload="drawBarChart()">
+
+    <div id="items"></div>
+
+</body>
+
+</html>
