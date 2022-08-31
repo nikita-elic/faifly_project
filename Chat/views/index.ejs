@@ -26,17 +26,17 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="./css/index.css" rel="stylesheet">
+    <link href="./css/tajam.css" rel="stylesheet">
 
     <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:2954889,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 2956773, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
             a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
 
 </head>
@@ -47,7 +47,7 @@
         <header class="bg-header text-white text-center" style="position: relative;">
             <div class="bg-secondary" style="padding-bottom: 70px;">
                 <nav class="navbar navbar-expand-lg text-uppercase" id="mainNav">
-                    <div class="container" style="padding-left: 0%; padding-right: 0%;">
+                    <div class="container-fluid" style="padding-left: 0%; padding-right: 0%;">
                         <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo.png" alt="">
                             <span class="logo-span">tajam</span>
                         </a>
@@ -496,15 +496,33 @@
 
                     <div class="col-md-4">
                         <h5 class="h5-footer">OUR STUDIO</h5>
+                        <div class="row">
 
-                        <p class="p-footer" style="margin-top: 20px;"><i class="fas fa-map-marker-alt"
-                                style="margin-right: 1rem"></i>
-                            Ruko cucruk, Jl. Radio luar dalem jos<br>
-                            No.12 - 13, Kalideres - Jakarta Barat<br>
-                            11480 - Indonesia
-                        </p>
-                        <p class="p-footer"><i class="fas fa-phone" style="margin-right: 1rem"></i>(+62) 21-2224-3333
-                        </p>
+                            <div class="col-md-12 col-sm-12">
+                                <i class="fas fa-map-marker-alt"
+                                    style="display: inline-block; color: white; vertical-align: top;"></i>
+
+                                <div style="display: inline-block; margin-left: 10px;">
+
+                                    <p class="p-footer">Ruko cucruk, Jl. Radio luar dalem jos<br>
+                                        No.12 - 13, Kalideres - Jakarta Barat<br>
+                                        11480 - Indonesia
+                                    </p>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <i class="fas fa-phone"
+                                    style="display: inline-block; color: white; vertical-align: middle;"></i>
+
+                                <div style="display: inline-block; margin-left: 6px;">
+                                    <p class="p-footer">(+62) 21-2224 3333</p>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
 
                     <div class="col-md-4">
@@ -546,10 +564,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div style="display: flex; margin: 10px; color: #fff;">HELP</div>
-                    <div style="display: flex; margin: 10px; color: #fff;">TERMS & CONDITION </div>
-                    <div style="display: flex; margin: 10px; color: #fff;">PRIVACY</div>
-                    <div style="display: flex; margin-left: auto; color: #fff;">Copyright © 2015 - Tajem Creative</div>
+
                 </div>
             </div>
         </div>
@@ -567,7 +582,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="text-center">Messages</h5>
                     <div id="allMessages"></div>
                 </div>
                 <div class="modal-footer">
@@ -577,7 +591,7 @@
                                 <input type="text" class="form-control" id="nickname" placeholder="Nickname"
                                     aria-label="Nickname">
                             </div>
-                            <textarea required class="form-control" id="textareaMessage" placeholder="Your message"
+                            <textarea class="form-control" id="textareaMessage" placeholder="Your message"
                                 aria-label="Your Message"></textarea>
                             <div class="input-group-append">
                                 <button class="btn btn-outline" type="submit" id="button-addon2" style="margin: 0;"><i
@@ -591,47 +605,43 @@
         </div>
     </div>
 
+    <script type="text/javascript" defer data-plerdy_code='1'>
+        var _protocol = "https:" == document.location.protocol ? " https://" : " http://";
+        _site_hash_code = "4154b324f895900d5985325d8d8987a4", _suid = 26372, plerdyScript = document.createElement("script");
+        plerdyScript.setAttribute("defer", ""), plerdyScript.dataset.plerdymainscript = "plerdymainscript",
+            plerdyScript.src = "https://a.plerdy.com/public/js/click/main.js?v=" + Math.random();
+        var plerdymainscript = document.querySelector("[data-plerdymainscript='plerdymainscript']");
+        plerdymainscript && plerdymainscript.parentNode.removeChild(plerdymainscript);
+        try { document.head.appendChild(plerdyScript) } catch (t) { console.log(t, "unable add script tag") }
+    </script>
+
 </body>
 
 <!-- Bootstrap core JavaScript -->
-<script src=" vendor/jquery/jquery.min.js"></script>
+<script src=" vendor/jquery/jquery.min.js">
+</script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom scripts for this template -->
+<script src="js/tajam.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-    // Функция для работы с данными на сайте
     $(function () {
-        // Включаем socket.io и отслеживаем все подключения
         let socket = io.connect();
-
         let $form = $("#messForm");
         let $textarea = $("#textareaMessage");
         let $allMessages = $("#allMessages");
         let $nickname = $("#nickname");
-
         let $bgColor = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
 
-        // Отслеживаем нажатие на кнопку в форме сообщений
-        $form.submit(function (event) {
-            // Предотвращаем классическое поведение формы
-            event.preventDefault();
-            let data = {
-                nickname: $nickname.val().length > 0 ? $nickname.val() : "Anonymous",
-                msg: $textarea.val(),
-                color: $bgColor
-            };
 
-            // В сокет отсылаем новое событие 'send message',
-            // в событие передаем различные параметры и данные
-            socket.emit('send message', data);
+        $form.submit(function (event) {
+            event.preventDefault();
+            socket.emit('send message', ($nickname.val().length > 0) ? { msg: $textarea.val(), nickname: $nickname.val(), color: $bgColor } : { msg: $textarea.val(), nickname: "Anonymous", color: $bgColor });
             $textarea.val('');
         });
 
-        // Здесь отслеживаем событие 'add message', 
-        // которое должно приходить из сокета в случае добавления нового сообщения
         socket.on('add message', function (data) {
-            // Встраиваем полученное сообщение в блок с сообщениями
             $allMessages.append(`<div class="chat-message" style="background-color: #${data.color}">${data.nickname}: ${data.msg}</div>`);
         });
 
